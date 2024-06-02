@@ -7,7 +7,7 @@
 1. Клонируйте репозиторий на свой локальный компьютер:
 
 ```bash
-git clone https://github.com/ваш_пользователь/ваш_проект.git
+git clone https://github.com/Minaskir/Advertising-agency.git
 ```
 2. Перейдите в директорию проекта:
 ```
