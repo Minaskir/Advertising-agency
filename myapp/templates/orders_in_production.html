@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Заказы в производстве{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="mb-4">Заказы в производстве</h1>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID Заказа</th>
+                    <th>Дата заказа</th>
+                    <th>Клиент</th>
+                    <th>Номер договора</th>
+                    <th>Статус оплаты</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                    <tr>
+                        <td>{{ order.id }}</td>
+                        <td>{{ order.order_date }}</td>
+                        <td>{{ order.customer.company_name }}</td>
+                        <td>{{ order.contract.number }}</td>
+                        <td>{{ order.contract.payment_status }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+
+
+
+

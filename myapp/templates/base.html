@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Система приема заказов{% endblock %}</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .navbar-nav .nav-link {
+            color: #ffffff !important;
+        }
+        .list-group-item {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'home' %}">Система заказов</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'orders_in_production' %}">Заказы в производстве</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'customer_orders' %}">Заказы клиентов</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contract_summary' %}">Сводка по договорам</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Добавить данные
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'add_address' %}">Добавить Адрес</a>
+                        <a class="dropdown-item" href="{% url 'add_company' %}">Добавить Компанию</a>
+                        <a class="dropdown-item" href="{% url 'add_manager' %}">Добавить Менеджера</a>
+                        <a class="dropdown-item" href="{% url 'add_customer' %}">Добавить Клиента</a>
+                        <a class="dropdown-item" href="{% url 'add_contract' %}">Добавить Договор</a>
+                        <a class="dropdown-item" href="{% url 'add_order' %}">Добавить Заказ</a>
+                        <a class="dropdown-item" href="{% url 'add_ad_product_type' %}">Добавить Тип Рекламного Продукта</a>
+                        <a class="dropdown-item" href="{% url 'add_ad_product' %}">Добавить Рекламный Продукт</a>
+                        <a class="dropdown-item" href="{% url 'add_template' %}">Добавить Шаблон</a>
+                        <a class="dropdown-item" href="{% url 'add_work_act' %}">Добавить Акт Выполненных Работ</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
